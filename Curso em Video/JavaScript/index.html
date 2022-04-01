@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu primeiro programa...</title>
     <style>
-        body{
+        body {
             background-color: black;
             color: aliceblue;
             font: normal 20pt Arial;
@@ -17,11 +17,17 @@
 </head>
 
 <body>
+    <h1>Ola, Mundo!</h1>
+    <p></p>
     <script>
+        var h1 = document.getElementsByTagName('h1')[0]
+        var p1 = document.getElementsByTagName('p')[0]
         var nome = window.prompt('Qual seu nome?')
-        document.write(`Ola, ${nome}!`)
+        if (nome != null && nome.length > 0) {
+            h1.innerText = `Ola, ${nome}!`
+        }
+        p1.innerText = 'Já me livrei da maldição'
     </script>
-    <p>Já me livrei da maldição</p>
 </body>
 
 </html>
