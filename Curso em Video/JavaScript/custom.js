@@ -1,29 +1,18 @@
-var agora = new Date()
-var diaSemana = agora.getDay()
-switch (diaSemana) {
-    case 0:
-        diaSemana = 'Domingo'
-        break
-    case 1:
-        diaSemana = 'Segunda'
-        break
-    case 2:
-        diaSemana = 'Terça'
-        break
-    case 3:
-        diaSemana = 'Quarta'
-        break
-    case 4:
-        diaSemana = 'Quinta'
-        break
-    case 5:
-        diaSemana = 'Sexta'
-        break
-    case 6:
-        diaSemana = 'Sabado'
-        break
-    default:
-        diaSemana = '[ERRO] Dia invalido'
-        break
+let vagas = [8, 3, 5, 9, 7]
+for (let pos in vagas) {
+    console.log(`A posição ${pos} esta preenchida com ${vagas[pos]}.`)
 }
-console.log(diaSemana)
+console.log('Após ordernado.')
+vagas.sort()
+for (let pos in vagas) {
+    console.log(`A posição ${pos} esta preenchida com ${vagas[pos]}.`)
+}
+for (let num = 0; num <= 10; num++) {
+    console.log(`Gostaria de saber qual a posição do numero ${num}.`)
+    pos = vagas.indexOf(num)
+    if (pos == -1) {
+        console.log(`O numero ${num} não esta preenchido na lista.`)
+    } else {
+        console.log(`O numero ${num} esta preenchido na posição ${pos}.`)
+    }
+}
