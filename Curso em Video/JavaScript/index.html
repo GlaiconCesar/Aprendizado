@@ -17,8 +17,14 @@
 </head>
 
 <body>
-    <h1 onclick="clicar()">Ola, Mundo!</h1>
-    <p></p>
+    <h1>Ola, Mundo!</h1>
+    <p>
+        Qua sua velocidade?
+        <input type="number" name="velocidade" id="velocidade">
+        km/h
+        <input type="button" value="Verificar" onclick="clicar()">
+    </p>
+    <div id="res"></div>
     <script>
         var h1 = document.getElementsByTagName('h1')[0]
         var p1 = document.getElementsByTagName('p')[0]
@@ -26,28 +32,16 @@
         if (nome != null && nome.length > 0) {
             h1.innerText = `Ola, ${nome}!`
         }
-        function sleep(milliseconds) {
-            return new Promise(resolve => setTimeout(resolve, milliseconds));
-        }
-        async function clicar() {
-            if (p1.innerText.length > 0) {
-                p1.innerText = ''
-                return
-            } else {
-                p1.innerText = 'Já me livrei da maldição'
+        function clicar() {
+            var velocidade = Number(window.document.getElementById('velocidade').value)
+            var resposta = window.document.getElementById('res')
+            resposta.removeAttribute('style')
+            resposta.innerHTML = `<p>Sua velocidade é <strong>${velocidade}km/h.</strong></p>`
+            if(velocidade > 60){
+                resposta.style.color = 'red'
+                resposta.innerHTML += '<p>Você ultrapassou a velocidade permitida. <strong>MULTADO!</strong></p>'
             }
-            for (let i = 1; i <= 10; i++) {
-                if (p1.innerText.length == 0) {
-                    return
-                }
-                if (p1.style.color == 'blue') {
-                    p1.style.color = 'red'
-                } else {
-                    p1.style.color = 'blue'
-                }
-                await sleep(2000);
-            }
-            p1.innerText = ''
+            resposta.innerHTML += '<p>Dirija sempre com cinto de segurança!</p>'
         }  
     </script>
 </body>
