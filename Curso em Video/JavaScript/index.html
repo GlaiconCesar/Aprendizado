@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <h1>Ola, Mundo!</h1>
+    <h1 onclick="clicar()">Ola, Mundo!</h1>
     <p></p>
     <script>
         var h1 = document.getElementsByTagName('h1')[0]
@@ -26,7 +26,29 @@
         if (nome != null && nome.length > 0) {
             h1.innerText = `Ola, ${nome}!`
         }
-        p1.innerText = 'Já me livrei da maldição'
+        function sleep(milliseconds) {
+            return new Promise(resolve => setTimeout(resolve, milliseconds));
+        }
+        async function clicar() {
+            if (p1.innerText.length > 0) {
+                p1.innerText = ''
+                return
+            } else {
+                p1.innerText = 'Já me livrei da maldição'
+            }
+            for (let i = 1; i <= 10; i++) {
+                if (p1.innerText.length == 0) {
+                    return
+                }
+                if (p1.style.color == 'blue') {
+                    p1.style.color = 'red'
+                } else {
+                    p1.style.color = 'blue'
+                }
+                await sleep(2000);
+            }
+            p1.innerText = ''
+        }  
     </script>
 </body>
 
