@@ -19,30 +19,29 @@
 <body>
     <h1>Ola, Mundo!</h1>
     <p>
-        Qua sua velocidade?
-        <input type="number" name="velocidade" id="velocidade">
-        km/h
+        Qua seu pais?
+        <input type="text" name="pais" id="pais">
         <input type="button" value="Verificar" onclick="clicar()">
     </p>
     <div id="res"></div>
     <script>
         var h1 = document.getElementsByTagName('h1')[0]
-        var p1 = document.getElementsByTagName('p')[0]
         var nome = window.prompt('Qual seu nome?')
         if (nome != null && nome.length > 0) {
             h1.innerText = `Ola, ${nome}!`
         }
         function clicar() {
-            var velocidade = Number(window.document.getElementById('velocidade').value)
+            var pais = window.document.getElementById('pais').value
             var resposta = window.document.getElementById('res')
             resposta.removeAttribute('style')
-            resposta.innerHTML = `<p>Sua velocidade é <strong>${velocidade}km/h.</strong></p>`
-            if(velocidade > 60){
-                resposta.style.color = 'red'
-                resposta.innerHTML += '<p>Você ultrapassou a velocidade permitida. <strong>MULTADO!</strong></p>'
+            resposta.innerHTML = `<p>Esta vivendo em <strong>${pais}</strong>.</p>`
+            if (pais.toUpperCase() == 'BRASIL') {
+                resposta.innerHTML += '<p>Você é <strong>Brasileiro</strong>!</p>'
+            } else {
+                resposta.style.color = 'blue'
+                resposta.innerHTML += '<p>Você é <strong>Estrangeiro</strong>!</p>'
             }
-            resposta.innerHTML += '<p>Dirija sempre com cinto de segurança!</p>'
-        }  
+        }
     </script>
 </body>
 
