@@ -1,8 +1,29 @@
-var idade = 12
-if (idade < 16) {
-    console.log('Não Vota')
-} else if (idade > 18 && idade < 70) {
-    console.log('Voto Obrigatorio')
-} else {
-    console.log('Voto Opcional')
+var agora = new Date()
+var diaSemana = agora.getDay()
+switch (diaSemana) {
+    case 0:
+        diaSemana = 'Domingo'
+        break
+    case 1:
+        diaSemana = 'Segunda'
+        break
+    case 2:
+        diaSemana = 'Terça'
+        break
+    case 3:
+        diaSemana = 'Quarta'
+        break
+    case 4:
+        diaSemana = 'Quinta'
+        break
+    case 5:
+        diaSemana = 'Sexta'
+        break
+    case 6:
+        diaSemana = 'Sabado'
+        break
+    default:
+        diaSemana = '[ERRO] Dia invalido'
+        break
 }
+console.log(diaSemana)
