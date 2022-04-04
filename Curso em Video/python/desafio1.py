@@ -1,0 +1,12 @@
+print('Irei fazer algumas perguntas!')
+nome = input('Digite seu nome: ')
+print('Olá ',nome,', é um prazer te receber!')
+print('Digite sua data de nascimento!')
+dia = input('Qual o dia? ')
+mes = input('Qual o mês? ')
+ano = input('Qual o ano? ')
+print(nome,', você nasceu em ',dia,' de ',mes,' de ', ano,'.')
+numero1 = int(input('Digite um numero: '))
+numero2 = int(input('Digite outro numero: '))
+soma = numero1 + numero2
+print('A soma de ',numero1,' e ', numero2,' é ',soma)
